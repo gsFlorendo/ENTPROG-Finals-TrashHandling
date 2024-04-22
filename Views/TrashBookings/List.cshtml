@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<TrashHandling.Models.TrashBookingViewModel>
+<!--Entities.Person>-->
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back to Home</a>
+<a asp-controller="TrashBookings" asp-action="Add" class="btn btn-success">Add Trash Booking</a>
+
+<div id="parentDiv">
+    <h1>Trash Booking List</h1>
+    @if (Model.Count() < 1)
+    {
+        <div class="alert alert-info">
+            No Records Found
+        </div>
+    }
+    else
+    {
+        <table id="TrashBookingTable" class="table">
+            <thead>
+                <tr>
+                    <th>Type of Trash</th>
+                    <th>Weight</th>
+                    <th>Location</th>
+                    <th>Booking Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var trashbooking in Model)
+                {
+                    <tr>
+                        <td>@trashbooking.TypeofTrash</td>
+                        <td>@trashbooking.Weight</td>
+                        <td>@trashbooking.Location</td>
+                        <td>@trashbooking.BookDate</td>
+                        @* <td>@trashbooking.BookDate.ToString("yyyy-MM-dd")</td> *@
+                        <td>
+                            <a class="btn btn-info btn-sm" asp-controller="TrashBookings" asp-action="Edit" asp-route-id="@trashbooking.Id">Edit</a>
+                            <button class="btn btn-danger btn-sm delTrashBooking" data-id="@trashbooking.Id">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <form id="DeleteTrashBooking" asp-controller="TrashBookings" asp-action="Delete" method="post">
+            <input type="hidden" id="hiddenTrashBookingId" name="Id" value="" />
+        </form>
+    }
+</div>
+<a id="printPDF" class="btn btn-primary">Print</a>
+
+@section Scripts {
+    <script>
+        let table = new DataTable('#TrashBookingTable');
+        $('.delTrashBooking').click(function (e) {
+            swal({
+                title: "Delete Confirmation",
+                text: "Are you sure you want to delete this trash record?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true
+            }).then((confirm) => {
+                if (confirm) {
+                    var btn = $(this);
+                    var id = btn.data("id");
+                    $("#hiddenTrashBookingId").val(id);
+                    $("#DeleteTrashBooking").submit();
+                }
+            })
+        });
+        $("#printPDF").click(function () {
+            var element = document.getElementById('parentDiv');
+            html2pdf().from(element).set({
+                margin: [30, 10, 5, 10],
+                pagebreak: { avoid: 'tr' },
+                jsPDF: { orentation: 'landscape', unit: 'pt', format: 'letter', compressPDF: true }
+            }).save()
+        });
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<TrashHandling.Models.FacilityViewModel>
+<!--Entities.Person>-->
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back to Home</a>
+<a asp-controller="Facilities" asp-action="Add" class="btn btn-success">Add Facility</a>
+
+<div id="parentDiv">
+    <h1>Facility List</h1>
+
+    @if (Model.Count() < 1)
+    {
+        <div class="alert alert-info">
+            No Records Found
+        </div>
+    }
+    else
+    {
+        <table id="FacilityTable" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var facility in Model)
+                {
+                    <tr>
+                        <td>@facility.FacilityName</td>
+                        <td>@facility.FacilityAddress</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" asp-controller="Facilities" asp-action="Edit" asp-route-id="@facility.Id">Edit</a>
+                            <button class="btn btn-danger btn-sm delFacility" data-id="@facility.Id">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <form id="DeleteFacility" asp-controller="Facilities" asp-action="Delete" method="post">
+            <input type="hidden" id="hiddenFacilityId" name="Id" value="" />
+        </form>
+    }
+</div>
+<a id="printPDF" class="btn btn-primary">Print</a>
+
+@section Scripts {
+    <script>
+        let table = new DataTable('#FacilityTable');
+        $('.delFacility').click(function (e) {
+            swal({
+                title: "Delete Confirmation",
+                text: "Are you sure you want to delete this facility record?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true
+            }).then((confirm) => {
+                if (confirm) {
+                    var btn = $(this);
+                    var id = btn.data("id");
+                    $("#hiddenFacilityId").val(id);
+                    $("#DeleteFacility").submit();
+                }
+            })
+        });
+        $("#printPDF").click(function () {
+            var element = document.getElementById('parentDiv');
+            html2pdf().from(element).set({
+                margin: [30, 10, 5, 10],
+                pagebreak: { avoid: 'tr' },
+                jsPDF: { orentation: 'landscape', unit: 'pt', format: 'letter', compressPDF: true }
+            }).save()
+        });
+    </script>
+}

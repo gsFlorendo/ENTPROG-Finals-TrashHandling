@@ -1,0 +1,220 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+<style>
+    /* body {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            color: #5a5a5a;
+        } */
+
+    .carousel {
+        margin-bottom: 4rem;
+    }
+
+    .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+    }
+
+    .carousel-item {
+        height: 32rem;
+    }
+
+        .carousel-item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 32rem;
+            opacity: 0.7;
+        }
+
+    .marketing .col-lg-4 {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .marketing h2 {
+        font-weight: 400;
+    }
+
+    .marketing .col-lg-4 p {
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
+
+    .featurette-divider {
+        margin: 5rem 0;
+    }
+
+    .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -.05rem;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+</style>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Slide 1">
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Leveraging Big Data for Environmental Sustainability</h1>
+                    <p>Using big data's potential to efficiently monitor and control garbage disposal can change waste management techniques. This strategy greatly aids in the accomplishment of sustainable development objectives through the use of modern analytics, real-time insights, and dynamic modifications.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#">Learn More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/10974663/pexels-photo-10974663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Slide 2">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Tackling Global Waste Challenges Head-On</h1>
+                    <p>Big data solutions must be integrated since waste management is an urgent issue, particularly in areas of the Philippines that are quickly urbanizing. Population increase is making trash creation more intense, thus it is critical to implement data-driven policies to reduce environmental stress and improve public health.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#">Get Started</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Slide 3">
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>Empowering Sustainable Decision-Making with Data</h1>
+                    <p>Big data analytics offers a powerful toolset to process and analyze vast amounts of waste-related data, enabling informed decision-making for sustainable waste management. This data-driven strategy clears the path for a more eco-friendly and productive future by spotting patterns, streamlining collection routes, and supporting recycling programs.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#">Explore More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container marketing">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="https://www.yesprograms.org/assets/stories/Group-of-volunteers-carrying-the-collected-garbage-bins-in-pairs.jpg"
+                 alt="Facility Control Center"
+                 class="rounded-circle"
+                 width="140"
+                 height="140" />
+            <h2>Volunteer with Recycling</h2>
+            <p>
+                <a class="btn btn-secondary" href="https://earthday-365.org/recycling-on-the-go/volunteer/">View details &raquo;&raquo;</a>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5aRti9xV1sqD6nVl6_1CW-R8QVXKOzoiNT8rxG2yBVQ&s"
+                 alt="Facility Control Center"
+                 class="rounded-circle"
+                 width="140"
+                 height="140" />
+            <h2>Solid Waste Management Programs</h2>
+            <p>
+                <a class="btn btn-secondary" href="https://www.smsupermalls.com/smcares/events/environmental-programs-on-solid-waste-management/">View details &raquo;&raquo;</a>
+            </p>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div>
+        <h3 style="margin: 40px 0 20px 0; font-size: 40px; text-align: center;">The NSWMC's Projected Waste Generation</h3>
+        <h2 style="margin: 40px 0 20px 0; font-size: 26px">Projected Waste by Region</h2>
+        <div id="container">
+            <canvas id="wasteregion"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="~/js/wasteregion.js"></script>
+        <script src="~/js/chart.js"></script>
+    </div>
+    <div>
+        <h2 style="margin: 40px 0 20px 0;  font-size: 26px">Projected Waste by Year</h2>
+        <div id="container">
+            <canvas id="wasteyear"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="~/js/wasteyear.js"></script>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">
+                The Impact of Recycling:
+                <br />
+                <span class="text-muted">Your Guide to Common Recyclables</span>
+            </h2>
+            <p class="lead">Discover the essentials of recycling everyday items with the U.S. Environmental Protection Agency’s (EPA) comprehensive resource. This guide provides step-by-step instructions on how to recycle a wide range of common materials, from paper and cardboard to batteries and electronics.</p>
+            <p>
+                <a class="btn btn-primary" href="https://www.epa.gov/recycle/how-do-i-recycle-common-recyclables">Learn More</a>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="https://images.pexels.com/photos/167538/pexels-photo-167538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="HTML tutorial" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+                Recycling Simplified:
+                <br />
+                <span class="text-muted">Your Guide to Common Recyclables</span>
+            </h2>
+            <p class="lead">Discover the essentials of recycling everyday items with the U.S. Environmental Protection Agency’s (EPA) comprehensive resource. This guide provides step-by-step instructions on how to recycle a wide range of common materials, from paper and cardboard to batteries and electronics.</p>
+            <p>
+                <a class="btn btn-primary" href="https://www.epa.gov/recycle/how-do-i-recycle-common-recyclables">Learn More</a>
+            </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="HTML tutorial" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">
+                Efficient Recycling:
+                <br />
+                <span class="text-muted">Mastering Waste Sorting</span>
+            </h2>
+            <p class="lead">Step up your recycling game with Believe Earth’s 13 Tips on Sorting Waste. This practical guide demystifies the recycling process, offering easy-to-implement advice for reducing waste and improving recycling efficiency. From learning how to say no to unnecessary packaging to understanding the nuances of cleaning recyclables, this resource is designed to help you make informed decisions about waste management.</p>
+            <p>
+                <a class="btn btn-primary" href="https://believe.earth/en/13-tips-on-sorting-waste/">Learn More</a>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="https://www.ashevillenc.gov/wp-content/uploads/2020/07/Recycle-right-illustration.jpg" alt="HTML tutorial" width="500" height="500" />
+        </div>
+    </div>

@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model TrashHandling.Models.TrashBookingViewModel
+<!--Entities.Person-->
+
+<h1>Edit Trash Booking</h1>
+
+@if (Model is null)
+{
+    <div class="alert alert-info">
+        No Records Found
+    </div>
+}
+else
+{
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mt-3">
+            <label class="form-label">Type of Trash</label>
+            <input type="text" class="form-control" asp-for="TypeofTrash" />
+            <span asp-validation-for="TypeofTrash" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Weight</label>
+            <input type="number" class="form-control" asp-for="Weight" />
+            <span asp-validation-for="Weight" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" asp-for="Location" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Date of Booking</label>
+            <input type="date" asp-for="BookDate" class="form-control" asp-for="BookDate" />
+            <span asp-validation-for="BookDate" clss="text-danger"></span>
+            @* <label asp-for="DateAdded"></label>
+        <input type="date" asp-for="DateAdded" class="form-control text-end" /> *@
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+}
+
